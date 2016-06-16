@@ -23,6 +23,7 @@ class GameScene: SKScene {
         let city = Background(textureNamed:"city", duration:20.0).addTo(screenNode, zPosition: 1)
         let ground = Background(textureNamed:"ground", duration:5.0).addTo(screenNode, zPosition: 2)
         bird = Bird(textureNames: ["bird1.jpg", "bird2.jpg"]).addTo(screenNode)
+        bird.position = CGPointMake(30.0, 400.0)
         actors = [sky, city, ground, bird]
         
         for actor in actors {
