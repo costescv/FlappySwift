@@ -63,7 +63,11 @@ extension Bird {
 //MARK: Actions
 extension Bird {
     func update() {
-        switch node.physicsBody!.velocity.dy {
+        guard let dy = node.physicsBody?.velocity.dy else {
+            return
+        }
+        
+        switch dy {
         case let dy where dy > 30.0:
             node.zRotation = (3.14 / 6.0)
         case let dy where dy < -100.0:
